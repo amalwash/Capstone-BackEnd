@@ -18,24 +18,24 @@ public class CarController {
         this.carService = carService;
     }
 
-    @GetMapping (path = "car" )
+    @GetMapping
     public List<Car> getCars() {
         return carService.getCars();
     }
 
 
-    @GetMapping(path = "car/{carId}")
+    @GetMapping(path = "cars/{carId}")
     public Optional< Car > getCar(@PathVariable(name = "carId") Integer carId) {
         return carService.getCar(carId);
     }
 
-    @PostMapping("api/car/add")
+    @PostMapping("add/car")
     public void registerNewCar(@RequestBody Car car) {
         carService.addNewCar(car);
     }
 
 
-@DeleteMapping(path = "api/delete/car/{carId}")
+@DeleteMapping(path = "delete/car/{carId}")
     public void deleteCar(@PathVariable("carId")String carId){
         int intcarId = Integer.parseInt(carId);
         carService.deleteCar(intcarId);

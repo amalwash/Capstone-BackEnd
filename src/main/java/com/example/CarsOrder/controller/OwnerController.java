@@ -20,7 +20,7 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping(path = "owner")
+    @GetMapping
     public List<Owner> getOwners() {
         return ownerService.getOwners();
     }
@@ -30,7 +30,7 @@ public class OwnerController {
         return ownerService.getOwner(ownerId);
     }
 
-    @PostMapping("api/owner/add")
+    @PostMapping("add/owner")
     public void registerNewOwner(@RequestBody Owner owner){
         ownerService.addNewOwner(owner);
     }
